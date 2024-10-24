@@ -10,7 +10,7 @@ time.sleep(2)
 
 # Abre o crea un archivo CSV
 with open("datos.csv", "a") as file:
-    file.write("Tiempo,Temperatura,Humedad\n")  # Escribe la cabecera
+    file.write("Temperatura,Humedad,UV,Visible,IR,Soil Moisture, Soil Moisture Status\n")  # Escribe la cabecera
 
     try:
         while True:
