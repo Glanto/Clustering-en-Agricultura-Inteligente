@@ -30,7 +30,7 @@ En este taller recopilaremos los datos mediante el uso de sensores de parámetro
 
 
 ## Ejecutar el código en Raspberry Pi 4 
-cd /Desktop/explore-CSR-training  
+cd /Desktop/explore-CSR-training  o  cd /Desktop/Clustering-en-Agricultura-Inteligente  
 
 python recibir_info.py
 
