@@ -6,7 +6,7 @@ En este taller recopilaremos los datos mediante el uso de sensores de parámetro
 2. Detectar anomalías.
 3. Analizar cambios estacionales o temporales.
 ## ESP8266
-![esp8266-nodemcu-pinout](https://github.com/user-attachments/assets/593a54b8-a6c5-499f-a7d7-aa124c38ca06)
+![Screenshot 2024-10-23 215611](https://github.com/user-attachments/assets/3a28d91f-91ca-4af5-9c82-8876b353cdca)
 ## RASPBERRY PI 4
 ![Screenshot 2024-10-23 183117](https://github.com/user-attachments/assets/a3af7c97-28e3-43b6-bbd6-8a0182e0dc47)
 ## SENSORES
