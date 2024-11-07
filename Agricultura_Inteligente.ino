@@ -34,30 +34,33 @@ void loop() {
 
   // Si el botón verde está presionado
   if (digitalRead(buttonWritePin) == LOW) {
-    // Obtener datos del sensor DHT11
-    float humidity = dht.readHumidity();
-    float temperature = dht.readTemperature();
-
-    // Obtener datos del sensor de luz solar
-    uint16_t UV = sunlight.readUV() / 100;  // Valor UV
-    uint16_t visible = sunlight.readVisible();  // Luz visible
-    uint16_t IR = sunlight.readIR();  // Infrarrojo
-
-    // Obtener datos del sensor de humedad del suelo
-    int soilMoisture = analogRead(moisturePin);
-    String soilMoistureStatus;
-    if (soilMoisture < 300) {
-      soilMoistureStatus = "dry";
-    } else if (soilMoisture < 600) {
-      soilMoistureStatus = "moist";
-    } else {
-      soilMoistureStatus = "wet";
+    for(int i=0;i<50;i++){
+      // Obtener datos del sensor DHT11
+      float humidity = dht.readHumidity();
+      float temperature = dht.readTemperature();
+  
+      // Obtener datos del sensor de luz solar
+      uint16_t UV = sunlight.readUV() / 100;  // Valor UV
+      uint16_t visible = sunlight.readVisible();  // Luz visible
+      uint16_t IR = sunlight.readIR();  // Infrarrojo
+  
+      // Obtener datos del sensor de humedad del suelo
+      int soilMoisture = analogRead(moisturePin);
+      String soilMoistureStatus;
+      if (soilMoisture < 300) {
+        soilMoistureStatus = "dry";
+      } else if (soilMoisture < 600) {
+        soilMoistureStatus = "moist";
+      } else {
+        soilMoistureStatus = "wet";
+      }
+  
+      // Enviar datos del sensor DHT11, sensor de luz y sensor de humedad del suelo por serial
+      String dataString = String(temperature) + "," + String(humidity) + "," + String(UV) + "," + String(visible) + "," + String(IR) + "," + String(soilMoisture) + "," + soilMoistureStatus;
+      Serial.println(dataString);
+  
+      delay(500);  // Esperar un segundo antes de enviar los siguientes datos
     }
-
-    // Enviar datos del sensor DHT11, sensor de luz y sensor de humedad del suelo por serial
-    String dataString = String(temperature) + "," + String(humidity) + "," + String(UV) + "," + String(visible) + "," + String(IR) + "," + String(soilMoisture) + "," + soilMoistureStatus;
-    Serial.println(dataString);
-
-    delay(1000);  // Esperar un segundo antes de enviar los siguientes datos
+    
   }
 }
